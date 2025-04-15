@@ -6,6 +6,10 @@ import { config } from "./config/app.config";
 import connectDatabase from "./config/database.config";
 import { error } from "console";
 import { errorHandler } from "./middlewares/errorHandler.middleware";
+import { HTTPSTATUS } from "./config/http.config";
+import { asyncHandler } from "./middlewares/asyncHandler.middleware";
+import { BadRequestException } from "./utils/appError";
+import { ErrorCodeEnum } from "./enums/error-code.enum";
 
 const app = express();
 const BASE_PATH = config.BASE_PATH;
@@ -33,11 +37,14 @@ app.use(
 )
 
 
-app.get(`/`, (req: Request, res: Response, next: NextFunction) => {
-    res.status(200).json({
-        message: "Hello World! Welcome to the backend!",
+app.get(
+    `/`,
+    asyncHandler(async(req: Request, res: Response, next: NextFunction) => {
+        return res.status(HTTPSTATUS.OK).json({
+        message: "Hello! This is backend",
+      });
     })
-})
+  );
 
 app.use(errorHandler);
 
