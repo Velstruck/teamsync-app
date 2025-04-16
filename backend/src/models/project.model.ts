@@ -36,4 +36,10 @@ const projectSchema = new Schema<ProjectDocument>({
         ref: 'User',
         required: true,
     },
+},{
+    timestamps: true,
 })
+
+
+const ProjectModel = mongoose.model<ProjectDocument>('Project', projectSchema);
+export default ProjectModel;
