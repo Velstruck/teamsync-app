@@ -129,6 +129,10 @@ export const getWorkspaceMembersService = async(workspaceId:string) => {
     }
 }
 
+//*****************
+//GET WORKSPACE ANALYTICS
+//*****************/
+
 export const getWorkspaceAnalyticsService = async(workspaceId:string) => {
     const currentDate = new Date()
 
@@ -157,6 +161,10 @@ export const getWorkspaceAnalyticsService = async(workspaceId:string) => {
         analytics
     }
 }
+
+//*****************
+//Change MEMBER ROLE
+//*****************/
 
 export const changeMemberRoleService = async(
     workspaceId:string,
@@ -192,6 +200,9 @@ export const changeMemberRoleService = async(
     }
 }
 
+//*****************
+//UPDATE WORKSPACE BY ID
+//*****************/
 
 export const updateWorkspaceByIdService = async(
     workspaceId:string,
@@ -210,6 +221,10 @@ export const updateWorkspaceByIdService = async(
         workspace
     }
 }
+
+//*****************
+//DELETE WORKSPACE BY ID
+//*****************/
 
 export const deleteWorkspaceByIdService = async(
     workspaceId:string, 
@@ -264,3 +279,5 @@ export const deleteWorkspaceByIdService = async(
         throw error;
     }
 }
+
+//workspace service done
