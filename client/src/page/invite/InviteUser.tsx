@@ -36,7 +36,7 @@ const InviteUser = () => {
           className="flex items-center gap-2 self-center font-medium"
         >
           <Logo />
-          Team Sync.
+          TeamSync
         </Link>
         <div className="flex flex-col gap-6">
           <Card>

@@ -39,12 +39,12 @@ export function WorkspaceSwitcher() {
   const workspaces = [
     {
       id: "my-wo8483727",
-      name: "Acme Inc",
+      name: "Jamnapaari Ltd.",
       plan: "Free",
     },
     {
       id: "ym28483727",
-      name: "Acme Corp.",
+      name: "Faridabad Corp.",
       plan: "Free",
     },
     {

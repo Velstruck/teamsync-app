@@ -50,7 +50,7 @@ const Asidebar = () => {
                 to={`/workspace/${workspaceId}`}
                 className="hidden md:flex ml-2 items-center gap-2 self-center font-medium"
               >
-                Team Sync.
+                TeamSync
               </Link>
             )}
           </div>
@@ -83,12 +83,12 @@ const Asidebar = () => {
                     >
                       <Avatar className="h-8 w-8 rounded-full">
                         <AvatarFallback className="rounded-full border border-gray-500">
-                          CN
+                          CR7
                         </AvatarFallback>
                       </Avatar>
                       <div className="grid flex-1 text-left text-sm leading-tight">
                         <span className="truncate font-semibold">
-                          Chile Brown
+                          Crister Ronaldo SUII
                         </span>
                         <span className="truncate text-xs">
                           example@gmail.com
@@ -105,7 +105,7 @@ const Asidebar = () => {
                   >
                     <DropdownMenuGroup></DropdownMenuGroup>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => setIsOpen(true)}>
+                    <DropdownMenuItem onClick={() => setIsOpen(true)} className="text-red-600">
                       <LogOut />
                       Log out
                     </DropdownMenuItem>

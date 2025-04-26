@@ -22,7 +22,7 @@ const LogoutDialog = (props: {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Are you sure you want to log out?</DialogTitle>
+            <DialogTitle className="text-red-400">Are you sure you want to log out?</DialogTitle>
             <DialogDescription>
               This will end your current session and you will need to log in
               again to access your account.
