@@ -48,7 +48,7 @@ export function WorkspaceSwitcher() {
 
   const workspaces = data?.workspaces;
 
-  React.useEffect(() => {
+ React.useEffect(() => {
     if(workspaces?.length){
       const workspace = workspaceId
       ? workspaces.find((ws) => ws._id === workspaceId)
@@ -62,7 +62,7 @@ export function WorkspaceSwitcher() {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [workspaceId, workspaces, navigate]);
+  }, [workspaceId, workspaces, navigate, setActiveWorkspace]);
 
   const onSelect = (workspace: WorkspaceType) => {
     setActiveWorkspace(workspace);

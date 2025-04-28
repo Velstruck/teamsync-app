@@ -108,7 +108,7 @@ const Asidebar = () => {
                   >
                     <DropdownMenuGroup></DropdownMenuGroup>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => setIsOpen(true)} className="text-red-600">
+                    <DropdownMenuItem onClick={() => setIsOpen(true)} className="text-red-700">
                       <LogOut />
                       Log out
                     </DropdownMenuItem>
