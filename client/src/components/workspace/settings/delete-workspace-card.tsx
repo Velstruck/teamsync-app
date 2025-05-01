@@ -1,5 +1,7 @@
 import { ConfirmDialog } from "@/components/resuable/confirm-dialog";
+import PermissionsGuard from "@/components/resuable/permission-guard";
 import { Button } from "@/components/ui/button";
+import { Permissions } from "@/constant";
 import { useAuthContext } from "@/context/auth-provider";
 import useConfirmDialog from "@/hooks/use-confirm-dialog";
 import { toast } from "@/hooks/use-toast";
@@ -51,7 +53,7 @@ const DeleteWorkspaceCard = () => {
             Delete Workspace
           </h1>
         </div>
-
+      <PermissionsGuard showMessage requiredPermission={Permissions.DELETE_WORKSPACE}>
         <div className="flex flex-col items-start justify-between py-0">
           <div className="flex-1 mb-2">
             <p>
@@ -69,6 +71,7 @@ const DeleteWorkspaceCard = () => {
             Delete Workspace
           </Button>
         </div>
+      </PermissionsGuard>
       </div>
 
       <ConfirmDialog

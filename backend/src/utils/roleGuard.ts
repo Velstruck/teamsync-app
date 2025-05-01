@@ -14,6 +14,6 @@ export const roleGuard = (
         permissions.includes(permission));
 
     if (!hasPermission) {
-        throw new UnauthorizedException("You do not have permission to perform this action");
+        throw new UnauthorizedException("WOMP WOMP! You do not have permission to perform this action");
     }
 }
