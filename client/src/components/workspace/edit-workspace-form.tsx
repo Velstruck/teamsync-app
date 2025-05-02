@@ -68,6 +68,11 @@ export default function EditWorkspaceForm() {
         queryClient.invalidateQueries({
           queryKey:["userWorkspaces"]
         });
+        toast({
+          title: "Success",
+          description: "Workspace updated successfully",
+          variant: "success",
+        })
       },
       onError: (error) => {
         toast({
