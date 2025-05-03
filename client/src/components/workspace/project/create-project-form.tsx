@@ -21,7 +21,7 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useWorkspaceId from "@/hooks/use-workspace-id";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createProjectMutationFn } from "@/lib/api";
 import { toast } from "@/hooks/use-toast";
 import { Loader } from "lucide-react";
@@ -32,6 +32,7 @@ export default function CreateProjectForm({
   onClose: () => void;
 }) {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const workspaceId = useWorkspaceId();
   const [emoji, setEmoji] = useState("📊");
 
@@ -70,6 +71,9 @@ export default function CreateProjectForm({
     mutate(payload, {
       onSuccess: (data)=> {
         const project = data.project;
+        queryClient.invalidateQueries({
+          queryKey: ["allprojects", workspaceId],
+        });
         toast({
           title: "Success",
           description: "Project created successfully",

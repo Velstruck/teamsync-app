@@ -1,5 +1,5 @@
 import API from "./axios-client";
-import { AllMembersInWorkspaceResponseType, AllWorkspaceResponseType, AnalyticsResponseType, ChangeWorkspaceMemberRoleType, CreateProjectPayloadType, CreateWorkspaceResponseType, CreateWorkspaceType, CurrentUserResponseType, EditWorkspaceType, LoginResponseType, loginType, ProjectResponseType, registerType, WorkspaceByIdResponseType } from "@/types/api.type";
+import { AllMembersInWorkspaceResponseType, AllProjectPayloadType, AllProjectResponseType, AllWorkspaceResponseType, AnalyticsResponseType, ChangeWorkspaceMemberRoleType, CreateProjectPayloadType, CreateWorkspaceResponseType, CreateWorkspaceType, CurrentUserResponseType, EditWorkspaceType, LoginResponseType, loginType, ProjectResponseType, registerType, WorkspaceByIdResponseType } from "@/types/api.type";
 
 export const loginMutationFn = async (
   data: loginType
@@ -101,7 +101,14 @@ export const createProjectMutationFn = async ({
 
 export const editProjectMutationFn = async () => {};
 
-export const getProjectsInWorkspaceQueryFn = async () => {};
+export const getProjectsInWorkspaceQueryFn = async ({
+  workspaceId,
+  pageSize = 10,
+  pageNumber = 1,
+}: AllProjectPayloadType): Promise<AllProjectResponseType> => {
+  const response = await API.get(`/project/workspace/${workspaceId}/all?pageSize=${pageSize}&pageNumber=${pageNumber}`);
+  return response.data;
+};
 
 export const getProjectByIdQueryFn = async () => {};
 
